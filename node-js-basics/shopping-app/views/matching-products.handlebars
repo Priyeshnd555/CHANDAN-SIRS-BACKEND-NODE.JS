@@ -1,0 +1,41 @@
+<div class="container">
+  <br>  <br>  <br>  <br>
+  <h2 style="text-align: center;color:red">Products based on Seach</h2>
+<table class="table">
+  <thead>
+    <hr>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">name</th>
+      <th scope="col">Description</th>
+      <th scope="col">price</th>
+      <th scope="col">Order</th>
+      
+
+    </tr>
+  </thead>
+  <tbody>
+
+    {{! HERE we are looping the array of obj PRODUCTS }}
+    {{#each matchingObj}}
+
+      <tr>
+        <th scope="row">{{_id}}</th>
+        <td>{{pName}}</td>
+        <td>{{pDesc}}</td>
+        <td>{{pPrice}}</td>
+        <td>
+           <form action="/products/create-order/{{_id}}" method="GET">
+            <button
+              type="submit"
+              class="btn btn-primary"
+            >Create  order</button>
+          </form>
+        </td>
+      </tr>
+
+    {{/each}}
+
+  </tbody>
+</table>
+</div>

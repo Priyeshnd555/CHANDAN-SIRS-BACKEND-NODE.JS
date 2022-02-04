@@ -1,0 +1,278 @@
+
+1.what is bcrypt.js explain with an example..?
+
+	ans : bcrypt is a javascript library for encrypting passwords as it is not secure
+
+		so while storing the data into   database we store the password after
+	encrypting it bcrypt for encyption uses an algorithm called HASHING to do achieve
+it but the problem with this algorithm is it always returns a fixed length of HASHED ALGORITHM
+so we 2 users use the same password then the Hashed password will also be same for them
+so we use SALTING algorithm to add to add some unique characters to it 
+
+in salting we specify the salting rounds to specify the complexity of the password that is 
+generated, The more the salt rounds the more time it will take to generat the salt 
+
+
+syntax : 
+
+	const bcrypt = require('/bryptjs')
+	
+	const pwrd = 'xyz';
+
+	const  rounds = 10 ; 	
+	
+	// if salt rounds is more than 12 it will take more time to generate it
+
+	
+	const salt = bcrypt.gensalt(saltRounds)
+
+	const hashedPwrd =bcrypt.hashSync(pwrd,salt)
+
+	//to compare the password 
+	
+	const match = bcrypt.compareSync( 'pwrdEntered', hashedPwrd)
+
+	if(match){
+
+	const token = jwt.sign(payload, secretKey, {
+
+			expiresIn:10h	
+	}
+
+
+	=================================================
+
+	1) What is salting ..?
+
+		
+		salting is nothing but adding a random string that makes the 
+		hashed password upredictable
+
+		because if  two users choose the same passwords then 
+	the resulting hashed password will also be the same for that reason we will 
+	use Salting 
+
+
+	2) what is hashing ..?
+
+		it is the ecrypting the password using algorithm called hash
+
+		Drawbacks :
+
+			 	*  -> hashing is one way operation then any code 
+	that tries to decrypt the user password will fail
+	
+	===================================================
+
+	3) What is JWT , Structure and Advantages of Jwt..?
+
+
+	-.> this is a stateless authorization mechanism servers protected routes will 
+		check for valid jwt 
+
+	for that we can use 
+
+		const payload = jwt.verify(token, SECRET _KEY) 
+		--------------------------------------------------------------
+
+	jwt -> jsonWebToken  :  it is secure open standard for transmitting the 
+
+		                  json object  between parties 
+
+			this information can be verified and trusted because it is digitally 
+		signed 
+
+			JWTS are signed using a secret Kye at the time of its generation
+
+	-----------------------------------------------------------------------------
+	
+	Structure of JSON WEB  TOKEN 
+
+		-> Header
+		-> Payload
+		-> signature
+
+	
+	Header : 
+		header is an object containing two parts 
+	
+		{
+		  "jwt":HS256,
+		   "jwt": "JWT"
+		}
+
+	Payload  :
+
+		payload contains the details like registration 
+
+		{
+			"name": "priyesh",
+			"role": "trainee"
+		}
+	SIGNATURE:
+
+
+		-> jwt is signed with a secret key 
+
+		To create the signature part you have to 
+
+
+		we need 
+
+			-> encoded header,encodePayload , Secret 
+
+
+		why Signature:
+
+
+			The signature is used to verify the message wanst changed 
+		along the way 
+
+ 
+	-----------------------------------------------------------------------------
+
+
+	common usage : -> For autherization 
+
+
+			-> for information Exachange
+
+
+	-----------------------------------------------------------------------------------
+
+
+
+
+			
+	
+
+
+
+
+	Advantages :>
+
+		-> it is compact i.e, say it is small size we can send it through 
+
+	HTTP request Header 
+
+
+		-> Main advantage is that it contains the user details so There is no
+	need to query the user details from the DATABASE like session 
+
+		-> also it has expiration time it will get destroyed after that 
+
+		-> This makes it fast for transmission and usable
+
+
+	========================================
+	
+	4) what are web Services ..?
+
+	
+	
+	web services is nothing but communication between two application though
+
+	network
+
+	web services is nothing but communication between two applications
+
+
+	if a software makes it available to users through a network and communivates 
+
+	between them we call it is as web services 
+
+	============================================
+
+	5) why  web services ..?
+
+		If we have to applications that display some data 
+
+	if we need that data in our app then we have go through the app 
+
+	and find the as a developer it becomes very difficult 
+
+
+	instead by using the webservices we can simply make a request to the backend 
+	application from which  we need to get the data instead of 
+	directly interacting  with  front end of the application 
+
+
+	==========================================
+
+	6) Types of Web services ..?
+
+		There are 2 types of web Services 
+
+		*+> RESTful services 
+
+		*+> Soap Web servieces
+
+
+		
+	RESTFUL -> Representational STATE Transfer
+
+		-> Rest does not define the standard messaging type
+
+			we can use both XML and JSON
+
+		-> JSON is more popular Format with Rest   
+
+		_> Resource can accessed through URL or uniform Resource 
+		
+		Identifies 
+
+		
+
+		HTTP standard STATUS Codes ->
+			
+			200 -> Success 
+
+			201 -> Created
+		
+			302 _> is sent to browser while Redirecting
+
+			404 -> Resource Not Found
+
+			500 -> SERVER ERROR 
+
+		
+
+
+	RESTFUL SERVICE CONSTRINTS 
+ 
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+		
+
+		
+
+
+
+
+
+
+
+
+	

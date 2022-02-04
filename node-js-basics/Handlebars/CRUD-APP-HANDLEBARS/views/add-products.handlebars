@@ -1,0 +1,50 @@
+<body>
+  <form action="/products/add-products" method="POST">
+    <div class="mb-3">
+      <label for="pid" class="form-label"> ID</label>
+      <input
+        name="_id"
+        type="number"
+        class="form-control"
+        id="pid"
+        aria-describedby="pid"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="pname" class="form-label"> Name</label>
+      <input
+        type="text"
+        name="pName"
+        class="form-control"
+        id="pname"
+        aria-describedby="pname"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="pdesc" class="form-label"> Desc</label>
+      <input
+        type="text"
+        name="pDesc"
+        class="form-control"
+        id="pdesc"
+        aria-describedby="pdesc"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="pprice" class="form-label"> Price</label>
+      <input
+        type="number"
+        name="pPrice"
+        class="form-control"
+        id="pprice"
+        aria-describedby="pprice"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</body>

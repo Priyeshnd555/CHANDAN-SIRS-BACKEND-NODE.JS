@@ -1,0 +1,67 @@
+
+<body class="container">
+  <form action="/products/order" method="POST">
+    <div class="mb-3">
+      <input
+        name="_id"
+        type="hidden"
+        class="form-control"
+        id="pid"
+        
+        aria-describedby="pid"
+        value="{{selectedProduct._id}}"
+      {{!-- to make sure that user wont be able to edit the _id --}}
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="pname" class="form-label"> Name</label>
+      <input
+        type="text"
+        name="pName"
+        class="form-control"
+        id="pname"
+        value="{{selectedProduct.pName}}"
+        aria-describedby="pname"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="pdesc" class="form-label"> Desc</label>
+      <input
+        type="text"
+        name="pDesc"
+        class="form-control"
+        id="pdesc"
+        value="{{selectedProduct.pDesc}}"
+        aria-describedby="pdesc"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="pprice" class="form-label"> Price</label>
+      <input
+        type="number"
+        name="pPrice"
+        class="form-control"
+        id="pprice"
+        value="{{selectedProduct.pPrice}}"
+        aria-describedby="pprice"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="pQuantity" class="form-label"> pQuantity</label>
+      <input
+        type="number"
+        name="pQuantity"
+        class="form-control"
+        id="pQunatity"
+        placeholder="Enter Quantity"
+        aria-describedby="pQuantity"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">order</button>
+  </form>
+
+</body>

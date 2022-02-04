@@ -1,0 +1,18 @@
+
+<body style="text-align: center;">
+    <h1>contact - handlebars</h1>
+
+    {{!-- looping through ARRAY OF STIRNGS  --}}
+    {{#each usersData}}
+
+        {{this}}
+
+    {{/each}}
+
+{{#if isAdmin}}
+    <h3>I'm admin</h3>
+    {{else}}
+    <h3>I'm not admin</h3>
+{{/if}}
+    
+</body>

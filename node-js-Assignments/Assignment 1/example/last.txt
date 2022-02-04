@@ -1,0 +1,2 @@
+ folder created filehello this is an assignment for creating the file
+ appended to the file

@@ -1,0 +1,1 @@
+Hello world am writing to file using node js command
